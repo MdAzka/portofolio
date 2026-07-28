@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import Image from "next/image";
 import { DotFieldDecoration } from "@/components/ui/DotFieldDecoration";
 import { ParticleText } from "@/components/ui/ParticleText";
+import { HighlightCard } from "@/components/ui/HighlightCard";
 
 function IconAction({
   href,
@@ -173,16 +173,8 @@ export function Hero() {
               className="absolute -top-12 -right-10 -z-10 h-72 w-72 rounded-full bg-teal-500/25 blur-3xl"
             />
 
-            {/* Frame foto */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-teal-400/20 bg-ink-800 shadow-[0_0_70px_-20px_rgba(212,197,169,0.4)]">
-              <Image
-                src="/images/profile.png"
-                alt="Muhammad Azka Zahrani"
-                fill
-                sizes="420px"
-                className="object-cover object-top"
-              />
-            </div>
+            {/* Highlight card — replaces the static photo */}
+            <HighlightCard />
           </div>
         </div>
       </div>
