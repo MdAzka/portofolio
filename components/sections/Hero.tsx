@@ -45,8 +45,8 @@ export function Hero() {
         }}
       />
 
-      {/* Big ambient particle mark, behind everything, assembles immediately */}
-      <div className="absolute inset-0 z-0">
+      {/* Big ambient particle mark, behind everything, assembles immediately — desktop/tablet only */}
+      <div className="absolute inset-0 z-0 hidden lg:block">
         <ParticleText
           texts={["AZ", "KA"]}
           focalX={0.45}
@@ -174,7 +174,15 @@ export function Hero() {
             />
 
             {/* Frame foto */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-teal-400/20 bg-ink-800 shadow-[0_0_70px_-20px_rgba(212,197,169,0.4)]"></div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-teal-400/20 bg-ink-800 shadow-[0_0_70px_-20px_rgba(212,197,169,0.4)]">
+              <Image
+                src="/images/profile.png"
+                alt="Muhammad Azka Zahrani"
+                fill
+                sizes="420px"
+                className="object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </div>

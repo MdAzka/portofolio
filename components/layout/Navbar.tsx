@@ -104,7 +104,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-white/10 md:hidden"
+            className="overflow-hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-md md:hidden"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
               {NAV_ITEMS.map((item) => (
