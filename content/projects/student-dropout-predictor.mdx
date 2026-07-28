@@ -1,0 +1,54 @@
+---
+title: "Student Dropout Risk Predictor"
+slug: "student-dropout-predictor"
+summary: "An XGBoost classifier that flags at-risk students from academic and demographic data, wrapped in a Streamlit interface for real-time predictions."
+category: "ai-research"
+tags: ["Machine Learning", "Classification", "Education Data"]
+stack: ["Python", "XGBoost", "Scikit-learn", "Pandas", "SMOTE", "Streamlit"]
+year: "2025"
+status: "completed"
+order: 10
+featured: true
+role: "Solo project"
+links:
+  github: "https://github.com/MdAzka/dropout-predict"
+---
+
+## The question
+
+Universities generally only learn a student is at risk once the signs are
+already severe. This project asks whether early academic and demographic
+signal — grades, enrollment status, admission scores — is enough to flag
+risk earlier, using a public, well-labeled dataset as a testbed.
+
+## Approach
+
+The model is trained on the UCI "Predict Students' Dropout and Academic
+Success" dataset, which pairs demographic fields (age at enrollment,
+admission grade, tuition status) with first- and second-semester academic
+performance (units enrolled, units approved, grade average).
+
+- **Preprocessing** — normalization of inputs and handling of a
+  meaningfully imbalanced target class.
+- **Resampling** — SMOTE is applied to the minority class so the model
+  doesn't just learn to always predict "graduate."
+- **Model** — XGBoost, chosen for strong tabular performance and fast
+  inference at prediction time.
+- **Evaluation** — accuracy, precision, recall, and F1, since a false
+  negative (a missed at-risk student) and a false positive carry very
+  different real-world costs.
+
+## Interface
+
+The trained model is served through a small Streamlit app: enter a
+student's admission grade, age, fee and debt status, and semester-by-semester
+academic record, and get a real-time Graduate / Dropout prediction. The
+interface intentionally uses plain sliders and toggles rather than raw
+feature names, so it's usable by someone who isn't reading the model card.
+
+## What I'd extend next
+
+Feature importance analysis to explain *why* a given student was flagged
+(useful for an advisor, not just a dashboard), and testing the model
+against a second institution's data to see how well it generalizes beyond
+the training set.

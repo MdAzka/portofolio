@@ -1,0 +1,45 @@
+---
+title: "Taskly"
+slug: "taskly"
+summary: "A gamified task and productivity tracker — calendar view, quest-style task completion, and a personal dashboard, built front-end first."
+category: "web-development"
+tags: ["Productivity", "UI/UX", "Gamification"]
+stack: ["HTML", "CSS", "JavaScript"]
+year: "2025"
+status: "completed"
+order: 20
+featured: true
+role: "Solo project"
+links:
+  github: "https://github.com/MdAzka/Taskly"
+---
+
+## Why a task app
+
+Most to-do apps are a flat list. Taskly's premise is that a task list
+feels different when completing something reads as progress rather than
+just a checked box — closer to a quest log than a spreadsheet.
+
+## What's built
+
+- **Calendar view** — tasks laid out against real dates, not just a
+  backlog.
+- **Quest framing** — tasks are presented as quests to complete, giving
+  small, immediate feedback for finishing something.
+- **Profile & settings** — a personal space with notification and
+  account preferences, structured to support real multi-user use later.
+
+## Engineering notes
+
+Built with plain HTML, CSS, and JavaScript rather than a framework —
+deliberately, to keep the DOM logic, state handling, and styling
+transparent while iterating quickly on the interaction design. The
+page structure (`index`, `calendar`, `quest`, `profile`, `settings`)
+mirrors how the app would eventually be split into routes if it moved
+to a framework.
+
+## What I'd extend next
+
+Persisting state to a real backend instead of the current front-end-only
+data, and turning the "quest" mechanic into a lightweight streak/XP
+system with actual progression.

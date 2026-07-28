@@ -1,0 +1,39 @@
+---
+title: "Daily Journal"
+slug: "daily-journal"
+summary: "A full-stack journaling app with authentication, an admin dashboard, and photo uploads — a first pass at server-side web development."
+category: "web-development"
+tags: ["Full-Stack", "CRUD", "Authentication"]
+stack: ["PHP", "MySQL"]
+year: "2024"
+status: "completed"
+order: 30
+role: "Solo project"
+links:
+  github: "https://github.com/MdAzka/dailyjournal"
+---
+
+## What it does
+
+A journaling/article platform with real accounts behind it: users log in,
+write entries, attach photos, and manage their own content through a
+dashboard, with a separate admin view for moderation.
+
+## Structure
+
+- **Authentication** — login and session handling (`login.php`,
+  `logout.php`) rather than a single shared page.
+- **Content management** — entries are stored and served dynamically
+  (`article.php`, `article_data.php`) instead of hard-coded pages.
+- **Admin dashboard** — a separate view (`admin.php`, `dashboard.php`)
+  for oversight of published content.
+- **Media handling** — photo uploads (`upload_foto.php`) attached to
+  entries.
+
+## Why it matters here
+
+This was the project where server-side logic, sessions, and a real
+database stopped being theoretical — the first time "the backend" meant
+code I'd written and had to keep straight, not just a concept from a
+course. It's a deliberately unglamorous CRUD app, and that's the point:
+the fundamentals of auth, persistence, and access control live here.

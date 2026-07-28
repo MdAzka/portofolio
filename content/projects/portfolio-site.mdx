@@ -1,0 +1,48 @@
+---
+title: "This Site"
+slug: "portfolio-site"
+summary: "The site you're on — a statically-generated portfolio built as a file-based content system, so new work can be added without touching layout code."
+category: "web-development"
+tags: ["Architecture", "Content Systems", "Performance"]
+stack: ["Next.js", "TypeScript", "Tailwind CSS", "MDX", "Framer Motion"]
+year: "2026"
+status: "in-progress"
+order: 5
+role: "Solo project"
+links:
+  github: "https://github.com/MdAzka/Personal-Website"
+---
+
+## The brief I gave myself
+
+A portfolio that could grow the same way a research log grows: add an
+entry, don't rebuild the shelf. Projects, experience, and education are
+each their own data source — projects live as individual MDX files, so
+adding one is a matter of dropping in a new file, not editing a page
+template.
+
+## Architecture
+
+- **Content as data** — every project is a single `.mdx` file with typed
+  frontmatter (category, tags, stack, links, order). The homepage grid,
+  category filters, and each project's detail page all read from the
+  same source, so there's exactly one place to edit.
+- **Static generation** — pages are built at compile time, not rendered
+  per-request, which keeps load times low without needing a database or
+  server to maintain.
+- **Typed throughout** — TypeScript interfaces define the shape of a
+  project, an experience entry, and an education entry, so a malformed
+  entry fails at build time instead of silently breaking a page.
+- **Componentized sections** — Hero, About, Projects, Experience,
+  Research, and Contact are independent components; adding a new section
+  (Publications, Certifications, a Blog) means writing one new component
+  and one line in the page, not restructuring the app.
+
+## Design
+
+The visual language borrows from two places at once: the typographic
+conventions of an academic paper (numbered sections, footnote-style
+citations, a serif display face) and the texture of a code editor
+(monospace labels, syntax-inspired accent colors). It's meant to look
+like what it is — a computer science student's workbench, not a
+generic template.

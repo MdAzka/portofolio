@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #12190f;
+}
+
+body {
+  @apply bg-ink-900 text-paper-200 font-sans antialiased;
+  font-feature-settings:
+    "ss01" on,
+    "cv01" on;
+}
+
+::selection {
+  background-color: #d4c5a9;
+  color: #12190f;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #12190f;
+}
+::-webkit-scrollbar-thumb {
+  background: #33473c;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5f52;
+}
+
+/* Visible keyboard focus everywhere, always */
+:focus-visible {
+  outline: 2px solid #d4c5a9;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #d4c5a9;
+  color: #12190f;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(231, 233, 228, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(231, 233, 228, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* MDX body copy on project detail pages */
+.prose-project {
+  @apply text-paper-300 leading-relaxed;
+}
+.prose-project h2 {
+  @apply text-2xl text-paper-100 mt-10 mb-4 first:mt-0;
+}
+.prose-project p {
+  @apply mb-4;
+}
+.prose-project ul {
+  @apply mb-4 ml-5 list-disc space-y-2;
+}
+.prose-project li strong {
+  @apply text-paper-100 font-semibold;
+}
+.prose-project strong {
+  @apply text-paper-100 font-semibold;
+}
+.prose-project a {
+  @apply text-teal-300 underline decoration-teal-400/40 underline-offset-4 hover:text-teal-300/80;
+}
+.prose-project code {
+  @apply font-mono text-sm text-amber-300 bg-ink-800 px-1.5 py-0.5 rounded;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate-marquee-left {
+  animation: marquee-left linear infinite;
+  will-change: transform;
+}
+.animate-marquee-right {
+  animation: marquee-right linear infinite;
+  will-change: transform;
+}
