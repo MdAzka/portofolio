@@ -18,6 +18,9 @@ export interface ResumeEntry {
   title: string;
   org: string;
   note?: string;
+  description?: string;
+  /** Photo paths, e.g. "/images/experience/asean-week-1.jpg". Cycles automatically if more than one. */
+  images?: string[];
 }
 
 export const organizationalExperience: ResumeEntry[] = [
@@ -25,22 +28,34 @@ export const organizationalExperience: ResumeEntry[] = [
     period: "2025",
     title: "ASEAN Week Delegate",
     org: "Vietnam — International Level",
+    description:
+      "Represented Indonesia at ASEAN Week 2025 in Vietnam, taking part in cross-cultural exchange and regional youth dialogue alongside delegates from across Southeast Asia.",
+    images: [],
   },
   {
     period: "2024 — Present",
     title: "Student Chamber Buddy",
     org: "Universitas Dian Nuswantoro",
+    description:
+      "Supporting incoming students at UDINUS as part of the Student Chamber program, helping them settle into campus life and navigate the early weeks of university.",
+    images: [],
   },
   {
     period: "2024",
     title: "AIESEC Future Leaders Delegate",
     org: "Regional Level",
+    description:
+      "Selected as a regional delegate for AIESEC's Future Leaders program, focused on leadership development and cross-organizational collaboration.",
+    images: [],
   },
   {
     period: "2023 — Present",
     title: "Kelas Unggulan (Excellence Class)",
     org: "Informatics Engineering, UDINUS",
     note: "Academic track — Regional",
+    description:
+      "Part of UDINUS's selective Informatics Engineering Excellence Class, a track for students focused on research, leadership, and accelerated academic development.",
+    images: [],
   },
 ];
 

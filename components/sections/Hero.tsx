@@ -45,11 +45,11 @@ export function Hero() {
         }}
       />
 
-      {/* Big ambient particle mark, behind everything, assembles immediately — desktop/tablet only */}
-      <div className="absolute inset-0 z-0 hidden lg:block">
+      {/* Big ambient particle mark, behind everything, assembles immediately */}
+      <div className="absolute inset-x-0 top-0 z-0 h-screen">
         <ParticleText
           texts={["AZ", "KA"]}
-          focalX={0.45}
+          focalX={0.38}
           color="212, 197, 169"
           dotOpacity={0.3}
           dotSize={2.2}
@@ -158,8 +158,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative hidden lg:flex lg:items-center lg:justify-center">
-          <div className="relative w-full max-w-[420px]">
+        <div className="relative flex items-center justify-center py-8 lg:py-0">
+          <div className="relative w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[420px]">
             {/* Dot field — di paling belakang, di bawah glow */}
             <DotFieldDecoration className="-z-20 scale-150" />
 
