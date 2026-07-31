@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, Grid3x3 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { workProjects } from "@/data/work-projects";
+import { ShinyText } from "@/components/ui/ShinyText";
 
 export function WorkView() {
   const searchParams = useSearchParams();
@@ -30,8 +31,8 @@ export function WorkView() {
     return (
       <main className="mx-auto max-w-content px-6 pb-24 pt-32 lg:px-10">
         <div className="mb-10 flex items-center justify-between">
-          <h1 className="text-4xl font-bold text-paper-100 sm:text-5xl">
-            All Projects
+          <h1 className="text-4xl font-bold sm:text-5xl">
+            <ShinyText text="All Projects" speed={3} />
           </h1>
           <button
             type="button"
@@ -87,8 +88,8 @@ export function WorkView() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-4xl font-bold text-paper-100 sm:text-5xl">
-              {project.title}
+            <h1 className="mt-6 text-4xl font-bold sm:text-5xl">
+              <ShinyText text={project.title} speed={3} />
             </h1>
 
             <p className="mt-5 max-w-md leading-relaxed text-paper-400">
@@ -113,7 +114,9 @@ export function WorkView() {
                   <SiGithub className="h-5 w-5" />
                 </a>
               ) : (
-                <span className="text-xs text-paper-600">Link coming soon</span>
+                <span className="text-xs text-paper-600">
+                  Link coming soon
+                </span>
               )}
             </div>
           </motion.div>

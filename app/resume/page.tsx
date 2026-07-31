@@ -12,6 +12,7 @@ import {
   type ResumeEntry,
 } from "@/data/resume-content";
 import { resumeSkills } from "@/data/resume-skills";
+import { ShinyText } from "@/components/ui/ShinyText";
 
 const PHOTO_ROTATE_MS = 3000;
 
@@ -160,8 +161,8 @@ export default function ResumePage() {
 
         {/* Content */}
         <div ref={contentRef} className="scroll-mt-28">
-          <h1 className="mb-8 text-4xl font-bold text-paper-100 sm:text-5xl">
-            {activeLabel}
+          <h1 className="mb-8 text-4xl font-bold sm:text-5xl">
+            <ShinyText text={activeLabel ?? ""} speed={3} />
           </h1>
 
           {active === "experience" && (
