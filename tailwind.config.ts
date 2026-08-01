@@ -73,11 +73,21 @@ const config: Config = {
           "0%, 100%": { transform: "translate(0,0)" },
           "50%": { transform: "translate(6px,-8px)" },
         },
+        "icon-shine": {
+          "0%, 100%": {
+            filter: "brightness(1) drop-shadow(0 0 0px rgba(212,197,169,0))",
+          },
+          "50%": {
+            filter:
+              "brightness(1.45) drop-shadow(0 0 7px rgba(212,197,169,0.6))",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.16,1,0.3,1) both",
         blink: "blink 1.1s steps(1) infinite",
         drift: "drift 7s ease-in-out infinite",
+        "icon-shine": "icon-shine 2.6s ease-in-out infinite",
       },
     },
   },

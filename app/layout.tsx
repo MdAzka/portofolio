@@ -8,6 +8,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { NavLoadingIndicator } from "@/components/layout/NavLoadingIndicator";
 import { NoiseOverlay } from "@/components/layout/NoiseOverlay";
+import { MobileScrollBlur } from "@/components/ui/MobileScrollBlur";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
         <NavLoadingIndicator />
         <main id="main">
           <PageTransition>{children}</PageTransition>
+          <MobileScrollBlur />
         </main>
         <Footer />
       </body>
